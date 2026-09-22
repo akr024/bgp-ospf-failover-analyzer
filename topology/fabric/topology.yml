@@ -1,0 +1,55 @@
+name: fabric
+
+topology:
+  nodes:
+    leaf1:
+      kind: linux
+      image: frr-ssh:latest
+      binds:
+        - leaf1/daemons:/etc/frr/daemons
+      exec:
+        - /usr/sbin/sshd
+    leaf2:
+      kind: linux
+      image: frr-ssh:latest
+      binds:
+        - leaf2/daemons:/etc/frr/daemons
+      exec:
+        - /usr/sbin/sshd
+    spine1:
+      kind: linux
+      image: frr-ssh:latest
+      binds:
+        - spine1/daemons:/etc/frr/daemons
+      exec:
+        - /usr/sbin/sshd
+    spine2:
+      kind: linux
+      image: frr-ssh:latest
+      binds:
+        - spine2/daemons:/etc/frr/daemons
+      exec:
+        - /usr/sbin/sshd
+    backbone1:
+      kind: linux
+      image: frr-ssh:latest
+      binds:
+        - backbone1/daemons:/etc/frr/daemons
+      exec:
+        - /usr/sbin/sshd
+    backbone2:
+      kind: linux
+      image: frr-ssh:latest
+      binds:
+        - backbone2/daemons:/etc/frr/daemons
+      exec:
+        - /usr/sbin/sshd
+
+  links:
+    - endpoints: ["leaf1:eth1", "spine1:eth1"]
+    - endpoints: ["leaf1:eth2", "spine2:eth1"]
+    - endpoints: ["leaf2:eth1", "spine1:eth2"]
+    - endpoints: ["leaf2:eth2", "spine2:eth2"]
+    - endpoints: ["spine1:eth3", "backbone1:eth1"]
+    - endpoints: ["spine2:eth3", "backbone2:eth1"]
+    - endpoints: ["backbone1:eth2", "backbone2:eth2"]

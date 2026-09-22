@@ -6,3 +6,6 @@ venv/
 .DS_STORE
 logs/
 *.log
+clab-*/
+**/clab-*/
+**/*.clab.y*ml.bak
