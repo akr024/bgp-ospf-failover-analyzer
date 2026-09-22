@@ -1,4 +1,4 @@
-FROM frrouting/frr:latest
+FROM quay.io/frrouting/frr:10.7.1
 
 RUN apk add --no-cache openssh-server iputils && \
     mkdir -p /var/run/sshd && \
