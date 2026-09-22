@@ -19,5 +19,5 @@ pathd=no
 staticd=yes
 
 vtysh_enable=yes
-zebra_options="  -A 127.0.0.1 -s 90000000"
+zebra_options="  -A 127.0.0.1
 staticd_options="  -A 127.0.0.1"

@@ -1,0 +1,21 @@
+name: day2-smoketest
+
+topology:
+  nodes:
+    r1:
+      kind: linux
+      image: frr-ssh:latest
+      binds:
+        - r1/daemons:/etc/frr/daemons
+      exec:
+        - /usr/sbin/sshd
+    r2:
+      kind: linux
+      image: frr-ssh:latest
+      binds:
+        - r2/daemons:/etc/frr/daemons
+      exec:
+        - /usr/sbin/sshd
+
+  links:
+    - endpoints: ["r1:eth1", "r2:eth1"]

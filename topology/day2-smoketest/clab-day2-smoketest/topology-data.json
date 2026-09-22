@@ -1,0 +1,101 @@
+{
+  "name": "day2-smoketest",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-2f8cf4807b5a",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOVVI7Ufdn0hChCPz+2c5nMS/eOELYhVR58id5BeG8RD"],
+  "nodes": {
+    "r1": {
+      "index": "0",
+      "shortname": "r1",
+      "longname": "clab-day2-smoketest-r1",
+      "fqdn": "r1.day2-smoketest.io",
+      "group": "",
+      "labdir": "/home/akr/bgp-ospf-failover-analyzer/topology/day2-smoketest/clab-day2-smoketest/r1",
+      "kind": "linux",
+      "image": "frr-ssh:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2f8cf4807b5a",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/akr/bgp-ospf-failover-analyzer/topology/day2-smoketest/clab-day2-smoketest/r1",
+        "clab-node-longname": "clab-day2-smoketest-r1",
+        "clab-node-name": "r1",
+        "clab-node-type": "",
+        "clab-owner": "akr",
+        "clab-topo-file": "/home/akr/bgp-ospf-failover-analyzer/topology/day2-smoketest/topology.yml",
+        "containerlab": "day2-smoketest"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r2": {
+      "index": "1",
+      "shortname": "r2",
+      "longname": "clab-day2-smoketest-r2",
+      "fqdn": "r2.day2-smoketest.io",
+      "group": "",
+      "labdir": "/home/akr/bgp-ospf-failover-analyzer/topology/day2-smoketest/clab-day2-smoketest/r2",
+      "kind": "linux",
+      "image": "frr-ssh:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2f8cf4807b5a",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/akr/bgp-ospf-failover-analyzer/topology/day2-smoketest/clab-day2-smoketest/r2",
+        "clab-node-longname": "clab-day2-smoketest-r2",
+        "clab-node-name": "r2",
+        "clab-node-type": "",
+        "clab-owner": "akr",
+        "clab-topo-file": "/home/akr/bgp-ospf-failover-analyzer/topology/day2-smoketest/topology.yml",
+        "containerlab": "day2-smoketest"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:f8:94:a9",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:cc:90:66",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}
