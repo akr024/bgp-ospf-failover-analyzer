@@ -7,6 +7,8 @@ topology:
       image: frr-ssh:latest
       binds:
         - leaf1/daemons:/etc/frr/daemons
+        - leaf1/frr.conf:/etc/frr/frr.conf
+        - leaf1/vtysh.conf:/etc/frr/vtysh.conf
       exec:
         - /usr/sbin/sshd
     leaf2:
@@ -14,6 +16,8 @@ topology:
       image: frr-ssh:latest
       binds:
         - leaf2/daemons:/etc/frr/daemons
+        - leaf2/frr.conf:/etc/frr/frr.conf
+        - leaf2/vtysh.conf:/etc/frr/vtysh.conf
       exec:
         - /usr/sbin/sshd
     spine1:
@@ -21,6 +25,8 @@ topology:
       image: frr-ssh:latest
       binds:
         - spine1/daemons:/etc/frr/daemons
+        - spine1/frr.conf:/etc/frr/frr.conf
+        - spine1/vtysh.conf:/etc/frr/vtysh.conf
       exec:
         - /usr/sbin/sshd
     spine2:
@@ -28,6 +34,8 @@ topology:
       image: frr-ssh:latest
       binds:
         - spine2/daemons:/etc/frr/daemons
+        - spine2/frr.conf:/etc/frr/frr.conf
+        - spine2/vtysh.conf:/etc/frr/vtysh.conf
       exec:
         - /usr/sbin/sshd
     backbone1:
@@ -35,6 +43,8 @@ topology:
       image: frr-ssh:latest
       binds:
         - backbone1/daemons:/etc/frr/daemons
+        - backbone1/frr.conf:/etc/frr/frr.conf
+        - backbone1/vtysh.conf:/etc/frr/vtysh.conf
       exec:
         - /usr/sbin/sshd
     backbone2:
@@ -42,6 +52,8 @@ topology:
       image: frr-ssh:latest
       binds:
         - backbone2/daemons:/etc/frr/daemons
+        - backbone2/frr.conf:/etc/frr/frr.conf
+        - backbone2/vtysh.conf:/etc/frr/vtysh.conf
       exec:
         - /usr/sbin/sshd
 
