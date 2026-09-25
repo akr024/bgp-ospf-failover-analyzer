@@ -1,5 +1,5 @@
 # BGP/OSPF Convergence & Failover Analyzer
-A Python-based tool that monitors a multi-router network fabric running OSPF and BGP, detects link/route failures, measures reconvergence time, and can trigger automated remediation - built as a hands-on demonstration of routing protocol behavior and network automation. 
+A Python-based tool that monitors a multi-router network fabric running OSPF and BGP, detects link/route failures, measures reconvergence time, and can trigger automated remediation - to demonstrate routing protocol behavior and network automation. 
 
 ## Status 
 Under active development
