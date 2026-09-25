@@ -2,9 +2,9 @@
 A Python-based tool that monitors a multi-router network fabric running OSPF and BGP, detects link/route failures, measures reconvergence time, and can trigger automated remediation - built as a hands-on demonstration of routing protocol behavior and network automation. 
 
 ## Status 
-Under active development (Day 2 of 17). 
+Under active development.
 
-## Project Goals 
+## Project Features 
 - Build a realistic multi-router lab (OSPF inside a fabric, BGP to a simulated backbone) using Containerlab + FRRouting 
 - Automate router state polling and change detection with Python 
 - Measure and graph convergence time under simulated failures 
