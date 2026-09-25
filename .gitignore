@@ -9,3 +9,4 @@ logs/
 clab-*/
 **/clab-*/
 **/*.clab.y*ml.bak
+*.conf.sav

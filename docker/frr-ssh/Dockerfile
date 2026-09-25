@@ -1,6 +1,6 @@
 FROM quay.io/frrouting/frr:10.7.1
 
-RUN apk add --no-cache openssh-server iputils && \
+RUN apk add --no-cache openssh-server iputils ethtool && \
     mkdir -p /var/run/sshd && \
     echo 'root:frr123' | chpasswd && \
     sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \

@@ -4,42 +4,42 @@ topology:
   nodes:
     leaf1:
       kind: linux
-      image: frr-ssh:latest
+      image: frr-ssh2:latest
       binds:
         - leaf1:/etc/frr
       exec:
         - /usr/sbin/sshd
     leaf2:
       kind: linux
-      image: frr-ssh:latest
+      image: frr-ssh2:latest
       binds:
         - leaf2:/etc/frr
       exec:
         - /usr/sbin/sshd
     spine1:
       kind: linux
-      image: frr-ssh:latest
+      image: frr-ssh2:latest
       binds:
         - spine1:/etc/frr
       exec:
         - /usr/sbin/sshd
     spine2:
       kind: linux
-      image: frr-ssh:latest
+      image: frr-ssh2:latest
       binds:
         - spine2:/etc/frr
       exec:
         - /usr/sbin/sshd
     backbone1:
       kind: linux
-      image: frr-ssh:latest
+      image: frr-ssh2:latest
       binds:
         - backbone1:/etc/frr
       exec:
         - /usr/sbin/sshd
     backbone2:
       kind: linux
-      image: frr-ssh:latest
+      image: frr-ssh2:latest
       binds:
         - backbone2:/etc/frr
       exec:
