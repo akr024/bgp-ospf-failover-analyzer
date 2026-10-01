@@ -9,6 +9,7 @@ topology:
         - leaf1:/etc/frr
       exec:
         - /usr/sbin/sshd
+        - /bin/sh -c "ip route del default via 172.20.20.1 dev eth0 2>/dev/null || true"
     leaf2:
       kind: linux
       image: frr-ssh2:latest
@@ -16,6 +17,7 @@ topology:
         - leaf2:/etc/frr
       exec:
         - /usr/sbin/sshd
+        - /bin/sh -c "ip route del default via 172.20.20.1 dev eth0 2>/dev/null || true"
     spine1:
       kind: linux
       image: frr-ssh2:latest
