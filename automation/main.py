@@ -1,8 +1,8 @@
-from getpass import getass
+from getpass import getpass
 from ssh_client import run_command
 
 def main():
-    host = "172.20.20.4"
+    host = "172.20.20.3"
     username = "root"
     command = "vtysh -c 'show ip ospf neighbor'"
 
