@@ -1,5 +1,6 @@
 OSPF_COMMAND = 'vtysh -c "show ip ospf neighbor json"'
 BGP_COMMAND = 'vtysh -c "show bgp ipv4 unicast summary json"'
+ROUTE_COMMAND = 'vtysh -c "show ip route json"'
 
 ROUTERS = {
         "leaf1":{
