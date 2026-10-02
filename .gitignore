@@ -11,3 +11,7 @@ clab-*/
 **/*.clab.y*ml.bak
 *.conf.sav
 data/snapshots/*.json
+.DS_Store
+._.DS_Store
+data/events/*.json
+*.py[cod]
