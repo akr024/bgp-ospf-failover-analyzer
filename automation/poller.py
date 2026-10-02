@@ -5,18 +5,17 @@ from ssh_client import run_command
 
 
 def poll_router(name: str, device: dict, password: str) -> dict:
-    state = {name}
+    state = {"ospf":None,"bgp":None,"error":None}
     try:
-        if(device["ospf"]):
+        if(device.get("ospf")):
             ospfOutput = run_command(host=device["host"],username="root",password=password,command=OSPF_COMMAND)
-            state[name]["ospf"] = json.loads(ospfOutput)
+            state["ospf"] = json.loads(ospfOutput)
 
-        if(device["bgp"]):
+        if(device.get("bgp")):
             bgpOutput = run_command(host=device["host"],username="root",password=password,command=BGP_COMMAND)
-            state[name]["bgp"] = json.loads(bgpOutput)
+            state["bgp"] = json.loads(bgpOutput)
     except Exception as e:
-        state[name]["error"] = e
-        raise RuntimeError(str(e))
+        state["error"] = str(e)
 
     return state
 
@@ -26,6 +25,6 @@ def poll_all_routers(password: str) -> dict:
 
     for router,routerInfo in ROUTERS.items():
         state = poll_router(name=router,device=routerInfo,password=password)
-        results.append(state)
+        results[router] = state
 
     return results
