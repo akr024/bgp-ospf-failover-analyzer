@@ -5,31 +5,31 @@ ROUTERS = {
         "leaf1":{
             "ospf":True,
             "bgp":False,
-            "host":172.20.20.4
+            "host":"172.20.20.4"
             },
         "leaf2":{
             "ospf":True,
             "bgp":False,
-            "host":172.20.20.5
+            "host":"172.20.20.5"
             },
         "spine1":{
             "ospf":True,
             "bgp":True,
-            "host":172.20.20.2
+            "host":"172.20.20.2"
             },
         "spine2":{
             "ospf":True,
             "bgp":True,
-            "host":172.20.20.6
+            "host":"172.20.20.6"
             },
         "backbone1":{
             "ospf":False,
             "bgp":True,
-            "host":172.20.20.7
+            "host":"172.20.20.7"
             },
         "backbone2":{
             "ospf":False,
             "bgp":True,
-            "host":172.20.20.3
+            "host":"172.20.20.3"
             }
 }
