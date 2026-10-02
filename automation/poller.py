@@ -1,12 +1,14 @@
 import json
 
-from devices import BGP_COMMAND, OSPF_COMMAND, ROUTERS
+from devices import BGP_COMMAND, OSPF_COMMAND, ROUTE_COMMAND, ROUTERS
 from ssh_client import run_command
 
 
-def poll_router(name: str, device: dict, password: str) -> dict:
-    state = {"ospf":None,"bgp":None,"error":None}
+def poll_router(device: dict, password: str) -> dict:
+    state = {"ospf":None,"bgp":None,"routes":None,"error":None}
     try:
+        routeOutput = run_command(host=device["host"],username="root",password=password,command=ROUTE_COMMAND)
+        state["routes"] = json.loads(routeOutput)
         if(device.get("ospf")):
             ospfOutput = run_command(host=device["host"],username="root",password=password,command=OSPF_COMMAND)
             state["ospf"] = json.loads(ospfOutput)
@@ -24,7 +26,7 @@ def poll_all_routers(password: str) -> dict:
     results = {}
 
     for router,routerInfo in ROUTERS.items():
-        state = poll_router(name=router,device=routerInfo,password=password)
+        state = poll_router(device=routerInfo,password=password)
         results[router] = state
 
     return results
