@@ -2,6 +2,25 @@ OSPF_COMMAND = 'vtysh -c "show ip ospf neighbor json"'
 BGP_COMMAND = 'vtysh -c "show bgp ipv4 unicast summary json"'
 ROUTE_COMMAND = 'vtysh -c "show ip route json"'
 
+FAILURE_SCENARIOS = {
+    "spine1_bb1": {
+        "router": "spine1",
+        "interface": "eth3",
+    },
+    "spine1_bb2": {
+        "router": "spine1",
+        "interface": "eth4",
+    },
+    "spine2_bb2": {
+        "router": "spine2",
+        "interface": "eth3",
+    },
+    "spine2_bb1": {
+        "router": "spine2",
+        "interface": "eth4",
+    },
+}
+
 ROUTERS = {
         "leaf1":{
             "ospf":True,
