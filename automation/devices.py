@@ -2,6 +2,19 @@ OSPF_COMMAND = 'vtysh -c "show ip ospf neighbor json"'
 BGP_COMMAND = 'vtysh -c "show bgp ipv4 unicast summary json"'
 ROUTE_COMMAND = 'vtysh -c "show ip route json"'
 
+CONVERGENCE_SCENARIOS = {
+    "spine1_bb1": {
+        "monitor": "backbone1",
+        "prefix": "10.255.0.1/32",
+        "failed_next_hop": "10.0.35.1",
+    },
+    "spine2_bb2": {
+        "monitor": "backbone2",
+        "prefix": "10.255.0.1/32",
+        "failed_next_hop": "10.0.46.1",
+    },
+}
+
 FAILURE_SCENARIOS = {
     "spine1_bb1": {
         "router": "spine1",
