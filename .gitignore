@@ -15,3 +15,4 @@ data/snapshots/*.json
 ._.DS_Store
 data/events/*.json
 *.py[cod]
+data/convergence/*.json
