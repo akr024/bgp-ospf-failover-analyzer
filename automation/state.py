@@ -65,7 +65,7 @@ def normalize_routes(data: dict) -> dict:
             protocols.add(entry["protocol"])
 
             for nexthop in entry.get("nexthops", []):
-                if nexthop.get("ip") and nexthop.get("active", True):
+                if nexthop.get("ip") and nexthop.get("active",False):
                     next_hops.add(nexthop["ip"])
 
         routes[prefix] = {
