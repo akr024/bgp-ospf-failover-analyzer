@@ -8,6 +8,16 @@ CONVERGENCE_SCENARIOS = {
         "prefix": "10.255.0.1/32",
         "failed_next_hop": "10.0.35.1",
     },
+    "spine1_bb2": {
+        "monitor": "backbone2",
+        "prefix": "10.255.0.1/32",
+        "failed_next_hop": "10.0.36.1",
+    },
+    "spine2_bb1": {
+        "monitor": "backbone1",
+        "prefix": "10.255.0.1/32",
+        "failed_next_hop": "10.0.45.1",
+    },
     "spine2_bb2": {
         "monitor": "backbone2",
         "prefix": "10.255.0.1/32",
