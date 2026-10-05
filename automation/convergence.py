@@ -5,14 +5,14 @@ from datetime import datetime, timezone
 from getpass import getpass
 from pathlib import Path
 
-from .devices import (
+from devices import (
     CONVERGENCE_SCENARIOS,
     ROUTE_COMMAND,
     ROUTERS,
 )
-from .failure_injection import set_failure_scenario
-from .ssh_client import run_command
-from .state import normalize_routes
+from failure_injection import set_failure_scenario
+from ssh_client import run_command
+from state import normalize_routes
 
 
 DEFAULT_TIMEOUT = 10.0
