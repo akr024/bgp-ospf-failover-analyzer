@@ -1,8 +1,8 @@
-# BGP/OSPF Convergence & Failover Analyzer
+# BGP Convergence Analyzer
 
 A network-automation lab built with **Containerlab, FRRouting, and Python**.
 
-The project simulates a redundant data-center fabric connected to a small BGP backbone. It can collect routing state, detect routing changes, inject controlled link failures, measure route convergence, and analyze the results across repeated runs.
+The project simulates a redundant data-center fabric (inter-connected with OSPF) connected to a small BGP backbone. It can collect routing state, detect routing changes, inject controlled link failures, measure route convergence, and analyze the results across repeated runs.
 
 ## Architecture
 
